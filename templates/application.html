@@ -164,14 +164,16 @@ $(document).ready(function() {
 
   function getLatestNoteReceived(id, data) {
   var obj=jQuery.parseJSON(data);
-  if (obj.DATA!='' && noteLatest!=obj.DATA && noteLatest!='') {
-     $.gritter.add({
-         title: '[#if "<#SETTINGS_GENERAL_ALICE_NAME#>"!=""#]<#SETTINGS_GENERAL_ALICE_NAME#>[#else#]<#LANG_DEFAULT_COMPUTER_NAME#>[#endif#]',
-         text: obj.DATA, 
-         sticky: false, 
-         time: 8000
+  if (obj.DATA!='' && noteLatest!=obj.DATA) {
+     noteLatest=obj.DATA;
+     $.toast({
+         heading: '[#if "<#SETTINGS_GENERAL_ALICE_NAME#>"!=""#]<#SETTINGS_GENERAL_ALICE_NAME#>[#else#]<#LANG_DEFAULT_COMPUTER_NAME#>[#endif#]',
+         text: '<div style="font-size: 18px; line-height: 24px;padding: 6px">'+obj.DATA+'</div>',
+         showHideTransition: 'fade',
+         allowToastClose: true,
+         hideAfter: 8000,
+         position: 'top-right'
       });
-    noteLatest=obj.DATA;
   }
  }
 

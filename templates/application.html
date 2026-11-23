@@ -13,8 +13,8 @@
 
 
 [#if ACTION=""#]
-  <link type="text/css" rel="stylesheet" href="<#ROOTHTML#>css/ui-[#if "<#THEME#>"=="dark"#]dark[#else#]light[#endif#]ness/jquery-ui-1.9.1.custom.css"/>
-  <link type="text/css" rel="stylesheet" href="<#ROOTHTML#>css/ui-[#if "<#THEME#>"=="dark"#]dark[#else#]light[#endif#]ness/ui.tabs.paging.css"/>
+  <link type="text/css" rel="stylesheet" href="<#ROOTHTML#>css/ui-[#if "<#MJ_THEME#>"=="dark"#]dark[#else#]light[#endif#]ness/jquery-ui-1.9.1.custom.css"/>
+  <link type="text/css" rel="stylesheet" href="<#ROOTHTML#>css/ui-[#if "<#MJ_THEME#>"=="dark"#]dark[#else#]light[#endif#]ness/ui.tabs.paging.css"/>
 [#endif#]
 
 
@@ -29,7 +29,7 @@
 <script language="javascript">
 $(document).ready(function() {
  if (!inIframe()) {
-  $("body").css('background-color', '[#if "<#THEME#>"=="dark"#]#222222[#else#]white[#endif#]');
+  $("body").css('background-color', '[#if "<#MJ_THEME#>"=="dark"#]#222222[#else#]white[#endif#]');
  }
 });
 </script>
